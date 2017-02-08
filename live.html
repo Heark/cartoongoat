@@ -7,7 +7,7 @@
 
 <script>
   $(document).ready(function(){
-  $(body).html("<iframe src=\"https://player.twitch.tv/?channel=cartoongoat\" frameborder=\"0\" allowfullscreen=\"true\" scrolling=\"no\" height=\""+window.innerHeight+"\" width=\""+window.innerWidth+"\"></iframe><a href=\"https://www.twitch.tv/cartoongoat?tt_medium=live_embed&tt_content=text_link\" style=\"padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;\">Watch live video from cartoongoat on www.twitch.tv</a>")
+  document.body.innerHTML = "<iframe src=\"https://player.twitch.tv/?channel=cartoongoat\" frameborder=\"0\" allowfullscreen=\"true\" scrolling=\"no\" height=\""+window.innerHeight+"\" width=\""+window.innerWidth+"\"></iframe><a href=\"https://www.twitch.tv/cartoongoat?tt_medium=live_embed&tt_content=text_link\" style=\"padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;\">Watch live video from cartoongoat on www.twitch.tv</a>"
   })
 </script>
 
