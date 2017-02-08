@@ -28,9 +28,11 @@
         });
       }
        function onPlayerStateChange(event) {  
-
             if(event.data === 0) { 
               player.playVideoAt(randomNumber())
+     if (event.data == YT.PlayerState.BUFFERING) {
+        event.target.setPlaybackQuality('hd720');
+         }
             }
        }
 
