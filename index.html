@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <div id="player"></div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script>
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      var firstLoad = false;
+      function randomNumber () {
+            return Math.floor(Math.random() * (59 - 2 + 1));
+      }
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: $(window).height,
+          width: $(window).width,
+          videoId: '',
+         playerVars: { 'rel': 0, 'controls': 0 },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+       function onPlayerStateChange(event) {  
+
+            if(event.data === 0) { 
+              player.playVideoAt(randomNumber())
+            }
+       }
+
+      function onPlayerReady(event) {
+       if(firstLoad === false){
+        firstLoad = true;
+        player.loadPlaylist({'list':'PLu8YOLBh9COcG-vsPbVImh4QOGaTGHLIX'});
+       }
+        event.target.playVideo();
+      }
+
+  </script>
+</html>
