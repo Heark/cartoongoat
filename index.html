@@ -12,8 +12,8 @@
 
       var player;
       var firstLoad = false;
-      function randomNumber () {
-            return Math.floor(Math.random() * (59 - 2 + 1));
+      function randomNumber (min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
       }
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
@@ -29,7 +29,7 @@
       }
        function onPlayerStateChange(event) {  
             if(event.data === 0) { 
-              player.playVideoAt(randomNumber())
+              player.playVideoAt(randomNumber(1, 245))
      if (event.data == YT.PlayerState.BUFFERING) {
         event.target.setPlaybackQuality('hd720');
          }
